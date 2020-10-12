@@ -201,7 +201,7 @@ export default {
 <style lang="scss" scoped>
 
   .banner-bg {
-    background-image: url(../../assets/images/muradi-0b8NaL2CMaQ-unsplash-lg.jpg);
+    background-image: url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/iRbZCUsCtpXoLKneFIqyOQzzPQosgL1n6PmkoWHPpYdNYUGkdU8IPpToE5012PHBVnEuES9vFsVXYwwlPOxsI93gAuq2S0ZZIWAjeXo0O1HRSNcI0lxeGPmfGiXk8jdY.jpg);
     position: absolute;
     top: 0;
     bottom: 0;
