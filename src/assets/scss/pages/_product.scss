@@ -1,0 +1,100 @@
+//產品列表
+.category {
+  li::after {
+    content: '';
+    border: 3px solid #dee2e6;
+  }
+}
+
+.page {
+  background-color: #d7ccc8;
+}
+
+
+.products {
+  .card-img {
+    height: 255px;
+
+    @include media-breakpoint-down(md) {
+      height: 330px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      height: 450px;
+    }
+
+    .btn {
+      opacity: 0;
+      transition-duration: 0.3s;
+    }
+  }
+
+  .card {
+    &:hover {
+      .card-img {
+        .btn {
+          opacity: 1;
+          transition-duration: 0.3s;
+        }
+      }
+    }
+  }
+}
+
+//產品頁面分類的hover效果
+
+.cateList {
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline:before,
+.hover-underline:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: $primary;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transition: .5s;
+}
+
+.hover-underline:hover:before {
+  left: 20%;
+  width: 50%;
+}
+
+.hover-underline:hover:after {
+  left: 30%;
+  width: 50%;
+}
+
+
+//單一產品頁
+//小標題的下底線
+.text-underline {
+  border-bottom: 3px $primary solid;
+  padding-bottom: 5px;
+}
+
+.num-control-input {
+  border-width: 1px;
+  border-style: solid;
+  border-color: $base;
+}
+
+.product-img {
+  width: 360px;
+  height: auto;
+  border-radius: 0px;
+
+  @include media-breakpoint-down(md) {
+    width: auto;
+  }
+}

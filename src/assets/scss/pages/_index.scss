@@ -1,0 +1,232 @@
+// banner區塊
+.banner {
+  color: $primary-dark;
+
+  @include media-breakpoint-down(sm) {
+    color: #fff;
+  }
+}
+
+
+//banner按鈕效果
+.hovr_sweep {
+  box-shadow: 2px 2px 5px #5f4339;
+  position: relative;
+  transition-property: color;
+  transition-duration: 0.3s;
+  width: 75%;
+  border-color: #5f4339;
+  color: #5f4339;
+
+  @include media-breakpoint-down(sm) {
+    border-color: #fff;
+    color: #fff;
+  }
+}
+
+.hovr_sweep:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #5f4339;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.hovr_sweep:hover,
+.hovr_sweep:focus,
+.hovr_sweep:active {
+  color: #fff;
+
+}
+
+.hovr_sweep:hover:before,
+.hovr_sweep:focus:before,
+.hovr_sweep:active:before {
+  transform: scaleX(1);
+}
+
+
+//intro
+.intro {
+  color: #fff;
+
+  @include media-breakpoint-down(sm) {
+    color: $primary-dark;
+  }
+
+}
+
+//cube
+.cube {
+  width: auto;
+  height: 147px;
+}
+
+.hover-bg {
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    background-size: 200%;
+  }
+}
+
+
+
+//use
+// Accordion Height
+$a-height: 180px;
+// Position text along bottom
+$text-offset: $a-height - 90;
+
+.accordion-horizon {
+  width: 100%;
+  max-width: 1080px;
+  height: $a-height;
+  overflow: hidden;
+  margin: 56px auto;
+  @include media-breakpoint-down(sm) {
+    height: auto;
+  }
+  ul {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    li {
+      display: table-cell;
+      position: relative;
+      width: 25%;
+      height: $a-height;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      transition: all 500ms ease;
+      div {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        a {
+          display: block;
+          height: $a-height;
+          width: 100%;
+          position: relative;
+          z-index: 3;
+          padding: 8px 16px;
+          color: #fff;
+          text-decoration: none;
+          transition: all 200ms ease;
+          * {
+            opacity: 0;
+            margin: 0;
+            width: 100%;
+            text-overflow: ellipsis;
+            position: relative;
+            z-index: 5;
+            white-space: wrap;
+            overflow: hidden;
+            -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+            -webkit-transition: all 400ms ease;
+            transition: all 400ms ease;
+          }
+          h2 {
+            text-overflow: clip;
+            font-size: 24px;
+            margin-bottom: 2px;
+            top: $text-offset;
+          }
+          p {
+            top: $text-offset;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    // Background images
+    li:nth-child(1) {
+      background-image: url('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/ZTWid9jxvRvmaRmFVdaBO8iz7uzZR2oRwxypdQ6QtyxblQOImTeze13p44Sr4IKSBTmgdgluklxeBuvrFJ68fM94xAVN382pwkIGHYMfbMvDTAprFeTIavVVu72ScYT6.jpg');
+    }
+
+    li:nth-child(2) {
+      background-image: url('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/m2MUSaS31jrVVVB9J8K18dn9a3HrygS4PTHyti0JN7bke6ZSMa7MU27wbH5V7Fg3GRD2al4gpFhZMjCEdaSj66w1ddDY28NDm7A0V3RXKOjaEaaKvwtylZEIewLDTJ9v.jpg');
+    }
+
+    li:nth-child(3) {
+      background-image: url('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/ECL30cCVr6hCkWtRWmJ0uCprbm3IUQf4PYlYl5o6W6Nd1nmlFPYeI7pgFGseYL0E5090AqEJ0EViZyRBnCAshkq1kqRTr2Wdsk9iJdpcWqp3m1PSsmSwAFyqJgLKUc56.jpg');
+    }
+
+    li:nth-child(4) {
+      background-image: url('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/JZgFWEoCaYXo69Qy41H9JbrYmkbfs946hbiW4bitxFTqi61dblAt4GpnRgtcLrFnweCvAeXzPOTvPfhtlHso7mXkvLk3npTXRLBaV0f4H0eqjVh6LH18YUcBVgwGDAi9.jpg');
+    }
+  }
+}
+
+.accordion-horizon ul {
+  &:hover li,
+  &:focus-within li {
+    width: 8%;
+    background-size: cover;
+  }
+  li:focus {
+    outline: none;
+  }
+  &:hover li:hover,
+  li:focus,
+  &:focus-within li:focus {
+    width: 20%;
+    a {
+      background: rgba(0, 0, 0, .4);
+      * {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+  }
+  &:hover li {
+    width: 8%;
+    a * {
+      opacity: 0;
+    }
+  }
+  &:hover li:hover {
+    width: 20%;
+    a {
+      background: rgba(0, 0, 0, .4);
+      * {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+.accordion-horizon {
+  @include media-breakpoint-down(sm) {
+    ul,
+    ul:hover {
+      li,
+      li:hover {
+        position: relative;
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        -webkit-transition: none;
+        transition: none;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+//結帳頁面
+/* select自訂下拉樣式 */
+.select-arrow {
+  background-image: url(/assets/images/arrow_drop_down-black-18dp.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: right;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  line-height: 19px;
+}
+
+.order {
+  .table-img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.order-table {
+  color: $primary-dark;
+  margin-bottom: 0;
+
+  td {
+    padding: 0 0 8px 0;
+    vertical-align: middle;
+    border: none;
+
+    @media (min-width:768px) {
+      padding: 0 0 16px 0;
+    }
+  }
+
+  thead {
+    td:first-child {
+      width: 64px;
+    }
+  }
+
+  tbody {
+    border-top: 1px solid rgba(0, 0, 0, 0.38);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.38);
+
+    tr:nth-child(1) {
+      td {
+        padding-top: 16px;
+      }
+    }
+
+    tr:nth-child(2) {
+      td {
+        padding-bottom: 16px;
+      }
+    }
+
+    @media (min-width:768px) {
+      tr:nth-child(1) {
+        td {
+          padding-top: 16px;
+        }
+      }
+    }
+  }
+
+  tfoot {
+    font-size: 24px;
+
+    td {
+      padding-top: 16px;
+      padding-bottom: 0;
+    }
+  }
+}
+
+  .check {
+    .breadcrumb {
+      padding: 0.75rem 0rem;
+    }
+  }

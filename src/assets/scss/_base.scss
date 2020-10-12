@@ -1,0 +1,37 @@
+// 全站設定
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.lh-2 {
+  line-height: 1.5;
+}
+
+.baumans {
+  font-family: Baumans;
+}
+
+.lobsterTwo {
+  font-family: Lobster Two;
+}
+
+.passeroOne {
+    font-family: Passero One;
+}
+
+.kirangHaerang {
+  font-family: Kirang Haerang;
+}
+
+.bg-cover {
+  background-size: cover;
+  background-position: center center;
+
+}
+
+.text-md-center {
+  @include media-breakpoint-down(md) {
+    text-align: center;
+  }
+}
