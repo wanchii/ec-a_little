@@ -2,7 +2,7 @@
 <section class="mt-5">
     <div class="container">
       <div
-      data-aos="fade-left" data-aos-duration="1000"
+      data-aos="fade-left" data-aos-duration="500"
       class="row mb-5 bg-light">
         <div class="col-md-6 bg-cover"
           style="
@@ -28,7 +28,7 @@
         </div>
       </div>
       <div
-      data-aos="fade-right" data-aos-duration="1000"
+      data-aos="fade-right" data-aos-duration="500"
       class="row flex-row-reverse mb-5 bg-gray-200">
         <div class="col-md-6 bg-cover"
           style="
@@ -54,8 +54,8 @@
         </div>
       </div>
       <div
-      data-aos="fade-left" data-aos-duration="1000"
-      class="row mb-5">
+      data-aos="fade-left" data-aos-duration="500"
+      class="row mb-5 bg-light">
         <div class="col-md-6 bg-cover"
           style="
           background-image:url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/qydSmgPhIVJeAwj8piVRMWKFatIE6MnOrNUFxIO3Ww3x2RwunyhxpVj7wrd2vXyuVV1RpfCZIddGSMOHD6KcP4IYGFWDP19I77cdcUtCsbF0hotKAE40X8OkwozjLRz6.jpg);
@@ -80,8 +80,8 @@
         </div>
       </div>
       <div
-      data-aos="fade-right" data-aos-duration="1000"
-      class="row flex-row-reverse mb-5 bg-light">
+      data-aos="fade-right" data-aos-duration="500"
+      class="row flex-row-reverse mb-5 bg-gray-200">
         <div class="col-md-6 bg-cover"
           style="
           background-image:url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/eLUsgBpGZ2LMaF2uojC7wrfpACE87LInW2sW64wqgBYHSgxAIOsRLlqc3DHCJGrCXt7LSgfaHZHJEIQOCl67AaxrbckPhmY02fQwx0UDu65Gdl0WxGfqsB5HSzU5Ecgl.jpg);

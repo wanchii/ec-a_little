@@ -1,7 +1,6 @@
 <template>
 <div>
   <loading :active.sync="isLoading" loader='dots'></loading>
-
   <NavbarSimple />
   <div class="container">
     <div class="row">
@@ -64,7 +63,7 @@
                       </td>
                       <td class="text-right text-danger"
                         v-if="coupon.enabled">
-                        {{ discount | currency}}
+                        {{ discount | currency }}
                       </td>
                       <td class="text-right text-danger" v-else>
                         0
@@ -73,8 +72,8 @@
                   </tbody>
                   <tfoot>
                     <tr>
-                      <td colspan="2" class="font-weight-bold ">總共</td>
-                      <td class="text-right font-weight-bold ">NT{{ countTotal | currency }}</td>
+                      <td colspan="2" class="font-weight-bold">總共</td>
+                      <td class="text-right font-weight-bold">NT{{ countTotal | currency }}</td>
                     </tr>
                   </tfoot>
                 </table>
@@ -126,7 +125,7 @@
                   </td>
                   <td class="text-right text-danger"
                     v-if="coupon.enabled">
-                    {{ discount | currency}}
+                    {{ discount | currency }}
                   </td>
                   <td class="text-right text-danger" v-else>
                     0
@@ -135,8 +134,8 @@
               </tbody>
               <tfoot>
                 <tr>
-                  <td colspan="2" class="font-weight-bold ">總共</td>
-                  <td class="text-right font-weight-bold ">NT{{ countTotal | currency }}</td>
+                  <td colspan="2" class="font-weight-bold">總共</td>
+                  <td class="text-right font-weight-bold">NT{{ countTotal | currency }}</td>
                 </tr>
               </tfoot>
             </table>
@@ -240,15 +239,11 @@
               </validation-observer>
           </div>
           <FooterSimple />
-
         </div>
       </div>
-
     </div>
   </div>
-
 </div>
-
 </template>
 
 <script>

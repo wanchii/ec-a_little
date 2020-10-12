@@ -50,8 +50,8 @@
                   </tbody>
                   <tfoot>
                     <tr>
-                      <td colspan="2" class="font-weight-bold ">總共</td>
-                      <td class="text-right font-weight-bold ">NT{{ order.amount }}</td>
+                      <td colspan="2" class="font-weight-bold">總共</td>
+                      <td class="text-right font-weight-bold">NT{{ order.amount }}</td>
                     </tr>
                   </tfoot>
                 </table>
@@ -91,8 +91,8 @@
               </tbody>
               <tfoot>
                 <tr>
-                  <td colspan="2" class="font-weight-bold ">總共</td>
-                  <td class="text-right font-weight-bold ">NT{{ order.amount }}</td>
+                  <td colspan="2" class="font-weight-bold">總共</td>
+                  <td class="text-right font-weight-bold">NT{{ order.amount }}</td>
                 </tr>
               </tfoot>
             </table>
@@ -116,21 +116,21 @@
                 <div class="mb-4">
                   <div class="d-flex align-items-center bg-light p-2 mb-2" >
                     <h6 class="font-weight-bold text-muted mb-0">訂購姓名:</h6>
-                    <p class="mb-0 ml-2 text-primary-light">{{ order.user.name}}</p>
+                    <p class="mb-0 ml-2 text-primary-light">{{ order.user.name }}</p>
                   </div>
                   <div class="d-flex align-items-center bg-light p-2 mb-2" >
                     <h6 class="font-weight-bold text-muted mb-0">電子郵件:</h6>
-                    <p class="mb-0 ml-2 text-primary-light">{{ order.user.email}}</p>
+                    <p class="mb-0 ml-2 text-primary-light">{{ order.user.email }}</p>
                   </div>
                   <div class="d-flex align-items-center bg-light p-2 mb-2" >
                     <h6 class="font-weight-bold text-muted mb-0">地址:</h6>
-                    <p class="mb-0 ml-2 text-primary-light">{{ order.user.address}}</p>
+                    <p class="mb-0 ml-2 text-primary-light">{{ order.user.address }}</p>
                   </div>
                 </div>
                 <h4>付款確認</h4>
                 <div class="p-2 bg-light d-flex justify-content-between mb-4">
                   <h6 class="font-weight-bold text-muted mb-0">付款方式</h6>
-                  <p class="mb-0 text-primary-light ">{{ order.payment}}</p>
+                  <p class="mb-0 text-primary-light">{{ order.payment }}</p>
                 </div>
                 <div class="d-flex justify-content-end">
                   <button class="btn btn-danger"
@@ -139,7 +139,6 @@
                       <i class="fas fa-spinner fa-spin" v-if="isProcessing"> </i>
                     </button>
                 </div>
-
           </div>
           <FooterSimple />
         </div>
@@ -178,7 +177,6 @@ export default {
   },
   methods: {
     getOrder() {
-      // GET api/{uuid}/ec/orders/{id}
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/orders/${this.orderId.id}`;
       this.isLoading = true;
       this.$http
@@ -196,7 +194,6 @@ export default {
         });
     },
     payNow() {
-      // POST api/{uuid}/ec/orders/{id}/paying
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/orders/${this.orderId.id}/paying`;
       this.isProcessing = true;
       this.$http

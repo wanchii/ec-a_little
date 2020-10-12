@@ -130,7 +130,7 @@
           <div
           data-aos="fade-down-right"
           class="col-lg-6 col-12">
-              <div class="row ">
+              <div class="row">
                 <div class="col-5">
                   <div class="bg-cover mb-4" style="background-image:url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/76ndp4axnNsaHcyL9frICyWpbJy34WAdTeVbJUhTzJZKkt1jHJQkP0g4UaRq2msguLyFxs0k1L5A6U27Qj4w1vcWwAHT29Cxnt5CR41Ly2uPWVa4qPNl2RraSnk71E0u.jpg);
                     width:auto;height: 318px;">

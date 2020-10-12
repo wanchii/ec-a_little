@@ -31,7 +31,6 @@
         </div>
       </div>
     </div>
-
     <div class="py-5">
       <h2 class="text-center text-primary py-6 mb-5 lh-2">
         一開始是為了自己做料理需要用到，開始尋找香料

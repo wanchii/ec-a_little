@@ -11,7 +11,6 @@
             <div class="card-body">
                 <h2 class="card-title font-weight-bold mb-4">訂單已付款</h2>
                 <p class="card-text h5 mb-3">會盡快為您處理出貨，出貨需3-5個工作天</p>
-
                 <router-link class="btn btn-primary w-100"
                   to="/products">
                   繼續購物
