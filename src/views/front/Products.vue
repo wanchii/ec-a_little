@@ -4,8 +4,9 @@
     <loading :active.sync="isLoading" loader='dots'></loading>
     <!-- 放分類和廣告標語-->
     <section class="mb-5">
-      <div class="jumbotron jumbotron-fluid mb-0" style="background-image:url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/cuMqN0rNaddon87q2kBCi9uIpCYohCZEE93FVHb2yYn5gxRM4M5BJ49GY4XigfYBbIGW3QhjrhrTIrgvUWFhozfBO4D4mtXcWxxtlCQAhyEn1Jwo3fxFj883hWnkxZbu.jpg);
-          background-position: 0% 80%; background-size: cover;height: 300px;">
+      <div class="jumbotron jumbotron-fluid mb-0"
+        style="background-image:url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/cuMqN0rNaddon87q2kBCi9uIpCYohCZEE93FVHb2yYn5gxRM4M5BJ49GY4XigfYBbIGW3QhjrhrTIrgvUWFhozfBO4D4mtXcWxxtlCQAhyEn1Jwo3fxFj883hWnkxZbu.jpg);
+        background-position: 0% 80%; background-size: cover;height: 300px;">
       </div>
       <div class="container">
         <ul class="cateList list-unstyled d-flex py-3 justify-content-center">
