@@ -101,7 +101,6 @@ export default {
   methods: {
     getStorages(pages = 1) {
       this.isLoading = true;
-      // GET api/{uuid}/admin/storage
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/storage?page=${pages}`;
       this.$http.get(url).then((response) => {
         this.storages = response.data.data;
@@ -110,12 +109,11 @@ export default {
       });
     },
     openModel(item) {
-      this.tempStorage = { ...item };// 淺拷貝
+      this.tempStorage = { ...item };
       $('#delModal').modal('show');
     },
     deleteData() {
       this.isLoading = true;
-      // DELETE api/{uuid}/admin/storage/{id}
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/storage/${this.tempStorage.id}`;
       this.$http.delete(url).then(() => {
         $('#deleteModal').modal('hide');

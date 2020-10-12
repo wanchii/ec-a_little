@@ -23,7 +23,7 @@
             <tbody v-if="coupons.length">
                 <tr v-for="(item, key) in coupons" :key="key">
                     <td >{{ key+1 }}</td>
-                    <td>{{ item.title}}</td>
+                    <td>{{ item.title }}</td>
                     <td>{{ item.percent }}</td>
                     <td>{{ item.deadline.datetime }}</td>
                     <td>
@@ -93,7 +93,6 @@
                               <label class="form-check-label"
                               for="checkEnabled">是否啟用</label>
                           </div>
-
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-secondary"
@@ -160,11 +159,8 @@ export default {
   },
   methods: {
     getCoupons(pages = 1) {
-      // GET api/{uuid}/admin/ec/coupons
       this.isLoading = true;
-
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/coupons?page=${pages}`;
-
       this.$http.get(url).then((response) => {
         this.coupons = response.data.data;
         this.pagination = response.data.meta.pagination;
@@ -174,21 +170,19 @@ export default {
     openCouponModal(action, item) {
       this.status = action;
       switch (action) {
-        case 'create':// 新增
+        case 'create':
           this.tempCoupon = {};
           $('#couponModal').modal('show');
           break;
-        case 'edit': { // 編輯
-          this.tempCoupon = { ...item };// 淺拷貝
-          // 用 split 來處理時間
+        case 'edit': {
+          this.tempCoupon = { ...item };
           const dedlineAt = this.tempCoupon.deadline.datetime.split(' ');
-          [this.due_date, this.due_time] = dedlineAt; // 日期-用解構來給值
-
+          [this.due_date, this.due_time] = dedlineAt;
           $('#couponModal').modal('show');
           break;
         }
-        case 'delete':// 刪除
-          this.tempCoupon = { ...item };// 淺拷貝
+        case 'delete':
+          this.tempCoupon = { ...item };
           $('#delCouponModal').modal('show');
           break;
         default:
@@ -196,13 +190,9 @@ export default {
       }
     },
     updateCoupon() {
-      // 用status狀態來判斷是新增(post)還是編輯(patch)
-      // POST api/{uuid}/admin/ec/coupon
-      // PATCH api/{uuid}/admin/ec/coupon/{id}
       this.isLoading = true;
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/coupon`;
       const editUrl = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/coupon/${this.tempCoupon.id}`;
-      // deadline_at 要符合 Y-m-d H:i:s 的格式例如：「2020-06-16 09:31:18」
       this.tempCoupon.deadline_at = `${this.due_date} ${this.due_time}`;
       if (this.status === 'create') {
         this.$http.post(url, this.tempCoupon).then(() => {
@@ -227,9 +217,7 @@ export default {
     },
     deleteCoupon() {
       this.isLoading = true;
-      // DELETE api/{uuid}/admin/ec/coupon/{id}
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/coupon/${this.tempCoupon.id}`;
-
       this.$http.delete(url).then(() => {
         $('#deleteCouponModal').modal('hide');
         this.$bus.$emit('message:push',
@@ -237,9 +225,7 @@ export default {
           'success');
         this.getCoupons();
         this.isLoading = false;
-      }).catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error.message);
+      }).catch(() => {
         $('#deleteCouponModal').modal('hide');
         this.$bus.$emit('message:push',
           '刪除失敗，請找工程師XD',

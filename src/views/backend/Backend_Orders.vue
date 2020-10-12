@@ -33,7 +33,7 @@
                 {{ item.payment }}
                 </td>
                 <td class="text-right">
-                  {{ item.amount | currency}}
+                  {{ item.amount | currency }}
                 </td>
                 <td>
                   <div class="custom-control custom-switch">
@@ -61,14 +61,11 @@
                 </td>
               </tr>
             </tbody>
-
         </table>
-
         <!-- 頁碼 -->
         <div class="d-flex justify-content-center my-4">
             <pagination :pages="pagination" @update="getOrders"></pagination>
           </div>
-
     </div>
 </template>
 
@@ -95,28 +92,22 @@ export default {
   methods: {
     getOrders(pages = 1) {
       this.isLoading = true;
-
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/orders?page=${pages}`;
-
       this.$http.get(url).then((response) => {
         this.orders = response.data.data;
         this.pagination = response.data.meta.pagination;
-
         this.isLoading = false;
       });
     },
     setOrderPaid(item) {
       let url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/orders/${item.id}/paid`;
-
       if (!item.paid) {
         url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/orders/${item.id}/unpaid`;
       }
-
       this.$http.patch(url, item.id).then(() => {
         this.$bus.$emit('message:push',
           '付款狀態已修改',
           'warning');
-
         this.getOrders();
       });
     },

@@ -21,7 +21,7 @@
                 <tr v-for="item in products" :key="item.id">
                     <td>{{ item.category }}</td>
                         <td>{{ item.title }}</td>
-                        <td class="text-right">{{ item.origin_price | currency}}</td>
+                        <td class="text-right">{{ item.origin_price | currency }}</td>
                         <td class="text-right">{{ item.price | currency }}</td>
                         <td>
                             <span class="text-success" v-if="item.enabled">啟用</span>
@@ -152,8 +152,6 @@
                                     <hr>
                                     <div class="form-group">
                                         <label for="inputContent">產品說明*</label>
-                                      <!-- <textarea class="form-control" id="inputContent" rows="3"
-                                            v-model="tempData.content"></textarea> -->
                                         <VueEditor id="inputContent"
                                           v-model="tempData.content"/>
                                     </div>
@@ -162,8 +160,6 @@
                                         <textarea class="form-control" id="inputDescription"
                                         rows="3"
                                         v-model="tempData.description"></textarea>
-                                        <!-- <VueEditor id="inputDescription"
-                                          v-model="tempData.description"/> -->
                                     </div>
                                     <div class="form-group">
                                         <label for="inputRecipe">料理方式</label>
@@ -172,15 +168,15 @@
                                     </div>
                                     <div class="form-group">
                                         <p class="mb-0">適配</p>
-                                        <div  v-for="(item, key) in matchFood" :key="key+1"
+                                        <!-- <div  v-for="(item, key) in matchFood" :key="key+1"
                                           class="px-2  form-check form-check-inline">
                                           <input type="checkbox"  class="form-check-input"
                                             v-model="tempData.options.match" :value="item">
                                           <label class="form-check-label">
                                             {{ item }}
                                           </label>
-                                        </div>
-                                        <!-- <div class="px-2">
+                                        </div> -->
+                                        <div class="px-2">
                                           <input type="checkbox"
                                           id="matchVeg"
                                           v-model="tempData.options.match" value="蔬菜">
@@ -225,7 +221,7 @@
                                           <input type="checkbox" id="match"
                                           v-model="tempData.options.matchSoup">
                                           <label for="match">湯品</label>
-                                        </div> -->
+                                        </div>
                                     </div>
                                     <div class="form-group form-check">
                                         <input type="checkbox" class="form-check-input"
@@ -356,7 +352,7 @@ export default {
     updateItem() {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempData.id}`;
       const addurl = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/product`;
-      if (this.tempData.id) { // 有id，就編輯更新產品資訊
+      if (this.tempData.id) {
         this.$http.patch(url, this.tempData)
           .then(() => {
             this.getProducts();
@@ -364,8 +360,8 @@ export default {
               '完成編輯-商品資料 ',
               'success');
           });
-      } else { // 沒有id，就新增一筆到遠端
-        this.$http.post(addurl, this.tempData)// 要注意資料需要的欄位都要有才能順利傳送
+      } else {
+        this.$http.post(addurl, this.tempData)
           .then(() => {
             this.getProducts();
             $('#productModal').modal('hide');
@@ -386,7 +382,6 @@ export default {
     deleteItem() {
       this.isLoading = true;
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempData.id}`;
-
       this.$http.delete(url).then(() => {
         this.getProducts();
         this.isLoading = false;
@@ -400,7 +395,6 @@ export default {
       const formData = new FormData();
       formData.append('file', uploadedFile);
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/storage`;
-
       this.status.fileUploading = true;
       this.$http.post(url, formData, {
         headers: {
@@ -408,7 +402,6 @@ export default {
         },
       }).then((response) => {
         this.status.fileUploading = false;
-
         if (response.status === 200) {
           this.tempData.imageUrl.push(response.data.data.path);
         }
@@ -416,7 +409,6 @@ export default {
         this.$bus.$emit('message:push',
           '檔案上傳失敗，請確認檔案大小是否超過 2MB',
           'danger');
-
         this.status.fileUploading = false;
       });
     },
