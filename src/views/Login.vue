@@ -3,7 +3,7 @@
     <Loading :active.sync="isLoading" />
       <div class="container">
         <div class="d-flex justify-content-center align-items-center py-6">
-          <div class="loginForm p-4 ">
+          <div class="loginForm p-4">
             <h2 class="font-weight-bold text-center mb-3"> 後台管理</h2>
             <form @submit.prevent="signin">
               <div class="form-group">
