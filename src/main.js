@@ -32,7 +32,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import jquery from 'jquery';
 import 'bootstrap';
-// import 'et-line';
 import './bus';
 import App from './App.vue';
 import router from './router';
