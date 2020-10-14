@@ -11,7 +11,8 @@
           </p>
         </li>
         <li class="px-3 d-md-block d-none">
-          <a href="https://github.com/wanchii/a_little" class="text-primary-dark h4 mb-0" target="_blank">
+          <a href="https://github.com/wanchii/ec-a_little"
+            class="text-primary-dark h4 mb-0" target="_blank">
             <span class="icon-envelope"></span>
           </a>
           <router-link class="text-primary-dark h4 mb-0 ml-3"
