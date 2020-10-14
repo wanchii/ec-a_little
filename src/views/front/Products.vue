@@ -106,6 +106,7 @@ export default {
       pagination: {},
       categoryName: '全部',
       isLoading: false,
+      errorData: [],
     };
   },
   components: {
@@ -142,8 +143,9 @@ export default {
         this.$toast.success(`${name}加入購物車`);
         this.$bus.$emit('update-total');
         this.status.loadingItem = '';
-      }).catch(() => {
-        this.$toast.error(`${name}加入購物車失敗`);
+      }).catch((err) => {
+        const errorData = err.response.data.errors;
+        this.$toast.error(`${name}${errorData}`);
         this.status.loadingItem = '';
       });
     },
