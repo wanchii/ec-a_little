@@ -823,9 +823,9 @@ $pagination-hover-color:            $link-hover-color !default;
 $pagination-hover-bg:               $gray-200 !default;
 $pagination-hover-border-color:     $gray-300 !default;
 
-$pagination-active-color:           $dark;//$component-active-color !default;
-$pagination-active-bg:              $light;//$component-active-bg !default;
-$pagination-active-border-color:    $pagination-active-bg !default;
+$pagination-active-color:           $light;//$component-active-color !default;
+$pagination-active-bg:              $primary;//$light;//$component-active-bg !default;
+$pagination-active-border-color:    $primary;//$pagination-active-bg !default;
 
 $pagination-disabled-color:         $gray-600 !default;
 $pagination-disabled-bg:            $white !default;
