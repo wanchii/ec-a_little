@@ -1,7 +1,6 @@
 // banner區塊
 .banner {
   color: $primary-dark;
-
   @include media-breakpoint-down(sm) {
     color: #fff;
   }
@@ -17,7 +16,6 @@
   width: 75%;
   border-color: #5f4339;
   color: #5f4339;
-
   @include media-breakpoint-down(sm) {
     border-color: #fff;
     color: #fff;
@@ -57,14 +55,12 @@
 //intro
 .intro {
   color: #fff;
-
   @include media-breakpoint-down(sm) {
     color: $primary-dark;
   }
-
 }
 
-//cube
+//tips
 .cube {
   width: auto;
   height: 147px;
@@ -82,9 +78,7 @@
 
 
 //use
-// Accordion Height
 $a-height: 180px;
-// Position text along bottom
 $text-offset: $a-height - 90;
 
 .accordion-horizon {

@@ -210,7 +210,7 @@
                     <validation-provider rules="required" tag="div"
                       v-slot="{ errors, classes}">
                       <label for="paymentSelect" class="font-weight-bold">購買方式</label>
-                      <select class="select-arrow form-control " id="paymentSelect"
+                      <select class="form-control" id="paymentSelect"
                         v-model="order_detail.payment" :class="classes" name="付款方式">
                       <!-- <option >請選擇付款方式</option> -->
                         <option value selected disabled hidden >請選擇付款方式</option>

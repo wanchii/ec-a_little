@@ -1,48 +1,6 @@
 //產品列表
-.category {
-  li::after {
-    content: '';
-    border: 3px solid #dee2e6;
-  }
-}
-
-.page {
-  background-color: #d7ccc8;
-}
-
-
-.products {
-  .card-img {
-    height: 255px;
-
-    @include media-breakpoint-down(md) {
-      height: 330px;
-    }
-
-    @include media-breakpoint-down(sm) {
-      height: 450px;
-    }
-
-    .btn {
-      opacity: 0;
-      transition-duration: 0.3s;
-    }
-  }
-
-  .card {
-    &:hover {
-      .card-img {
-        .btn {
-          opacity: 1;
-          transition-duration: 0.3s;
-        }
-      }
-    }
-  }
-}
 
 //產品頁面分類的hover效果
-
 .cateList {
   a:hover {
     text-decoration: none;
@@ -74,6 +32,35 @@
   left: 30%;
   width: 50%;
 }
+
+// 主要產品列表
+.products {
+  .card-img {
+    height: 255px;
+    @include media-breakpoint-down(md) {
+      height: 330px;
+    }
+    @include media-breakpoint-down(sm) {
+      height: 450px;
+    }
+    .btn {
+      opacity: 0;
+      transition-duration: 0.3s;
+    }
+  }
+  .card {
+    &:hover {
+      .card-img {
+        .btn {
+          opacity: 1;
+          transition-duration: 0.3s;
+        }
+      }
+    }
+  }
+}
+
+
 
 
 //單一產品頁
