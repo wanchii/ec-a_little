@@ -105,9 +105,11 @@ export default {
         url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/orders/${item.id}/unpaid`;
       }
       this.$http.patch(url, item.id).then(() => {
-        this.$bus.$emit('message:push',
+        this.$bus.$emit(
+          'message:push',
           '付款狀態已修改',
-          'warning');
+          'warning',
+        );
         this.getOrders();
       });
     },

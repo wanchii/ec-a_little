@@ -129,6 +129,7 @@ export default {
           this.isLoading = false;
         })
         .catch(() => {
+          this.$toast.error('無法取得資料，請重新整理');
           this.isLoading = false;
         });
     },
