@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <Toast />
+    <Toasts />
     <router-view/>
   </div>
 </template>
 
 <script>
-import Toast from '@/components/Toasts.vue';
+import Toasts from '@/components/Toasts.vue';
 
 export default {
   data() {
@@ -14,7 +14,7 @@ export default {
     };
   },
   components: {
-    Toast,
+    Toasts,
   },
 };
 </script>
