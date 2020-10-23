@@ -27,7 +27,7 @@
                     <tr v-for="item in carts" :key="item.product.id + 2">
                       <td>
                         <img :src="item.product.imageUrl[0]"
-                          alt="" class="table-img">
+                          :alt="item.product.title" class="table-img">
                       </td>
                       <td class="font-weight-bold text-vcraftsman-dark">
                         {{ item.product.title }} {{ item.quantity }}
@@ -90,7 +90,7 @@
                 <tr v-for="item in carts" :key="item.product.id + 1">
                   <td>
                     <img :src="item.product.imageUrl[0]"
-                      alt="" class="table-img">
+                      :alt="item.product.title" class="table-img">
                   </td>
                   <td class="font-weight-bold text-vcraftsman-dark">
                     {{ item.product.title }} {{ item.quantity }}
