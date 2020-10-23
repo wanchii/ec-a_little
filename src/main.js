@@ -1,11 +1,8 @@
 import Vue from 'vue';
-
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
-
 import axios from 'axios';
 import VueAxios from 'vue-axios';
-
 import {
   ValidationObserver,
   ValidationProvider,
@@ -39,7 +36,6 @@ import currencyFilter from './filters/currency';
 
 window.$ = jquery;
 Vue.config.productionTip = false;
-
 Vue.use(Toast, {
   position: 'bottom-right',
   newestOnTop: true,
@@ -71,17 +67,14 @@ Vue.use(Loading, {
   isFullPage: true,
   opacity: 0.8,
 });
-
 Vue.use(Vue2Editor);
 Vue.use(VueClipboard);
 Vue.use(VueAwesomeSwiper);
 SwiperClass.use([Pagination, Mousewheel, Autoplay]);
-
 Vue.filter('currency', currencyFilter);
-// vee-validate
 Object.keys(rules).forEach((rule) => {
   extend(rule, rules[rule]);
-}); // 所有驗證規則
+});
 configure({
   classes: {
     valid: 'is-valid',
@@ -91,7 +84,6 @@ configure({
 localize('tw', zhTW);
 Vue.component('ValidationObserver', ValidationObserver);
 Vue.component('ValidationProvider', ValidationProvider);
-
 Vue.component('Loading', Loading);
 
 new Vue({
