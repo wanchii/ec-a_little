@@ -16,7 +16,7 @@
         <div class="col-md-6 mb-md-0 p-md-4">
           <div class="h-100 d-flex justify-content-center">
             <img :src="product.imageUrl" class="product-img"
-              alt="...">
+              :alt="product.title">
           </div>
         </div>
         <div class="col-md-6 p-4 pl-md-0">
@@ -178,7 +178,7 @@ export default {
     filterId() {
       for (let i = 0; i < this.tempData.length; i += 1) {
         if (this.tempData[i].id === this.page_id) {
-          this.tempData.splice(1, 1);
+          this.tempData.splice(i, 1);
         }
       }
       this.randomAry();
