@@ -101,12 +101,8 @@ export default {
         });
     },
     signOut() {
-      const url = `${process.env.VUE_APP_APIPATH}auth/logout`;
-      this.$http.post(url, { api_token: this.token })
-        .then(() => {
-          this.$router.push('/');
-        }).catch(() => {
-        });
+      document.cookie = 'hexToken=; expires=; path=/';
+      this.$router.push('/');
     },
   },
 
