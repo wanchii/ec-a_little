@@ -4,7 +4,7 @@
       <div class="row py-5 mb-5">
         <div class="col-md-6">
           <img src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/nHJYCYy1JPd4Kj0pmz63B1NvhJ24uhJOUz4XqO8WlLQDm6Cer8h4PIuwlRfTaJwVb4ldtAKKBqJoak9wwgTXV9OUwKvmNtnh7Ke5qI55vvUp9XngVcaCqLDpzb1UfQgJ.jpg"
-            alt="">
+            alt="料理書">
         </div>
         <div class="col-md-6">
           <div class="p-6 d-flex align-items-center h-100">
@@ -27,7 +27,8 @@
           </div>
         </div>
         <div class="col-md-6">
-          <img src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/eCRk0bw8A7Ml8pRcjL9ksjbEjFA6aZn80Wp9X7samjjayWmunEeEyuxwj8PAGFK7Vm7yxwXxF5fjV9ktpznOtS3i4csTYheH7lq4xm8f2dWlBHhHl0rcTcoWNXCtCmQV.jpg" alt="">
+          <img src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/eCRk0bw8A7Ml8pRcjL9ksjbEjFA6aZn80Wp9X7samjjayWmunEeEyuxwj8PAGFK7Vm7yxwXxF5fjV9ktpznOtS3i4csTYheH7lq4xm8f2dWlBHhHl0rcTcoWNXCtCmQV.jpg"
+          alt="做菜常用香料">
         </div>
       </div>
     </div>
