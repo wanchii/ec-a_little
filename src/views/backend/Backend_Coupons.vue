@@ -35,7 +35,7 @@
                           <button type="button" class="btn btn-outline-primary"
                           @click="openCouponModal('edit', item)"
                           >編輯</button>
-                          <button button type="button" class="btn btn-outline-danger"
+                          <button type="button" class="btn btn-outline-danger"
                           @click="openCouponModal('delete', item)"
                           >刪除</button>
                       </div>
