@@ -1,5 +1,4 @@
 <template>
-
 <div>
   <div class="content">
     <Navbar />
@@ -22,9 +21,6 @@ export default {
   components: {
     Navbar,
     Footer,
-  },
-  created() {
-
   },
 };
 </script>
