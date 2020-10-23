@@ -78,7 +78,8 @@
                                           @change="uploadFile"
                                         >
                                       </div>
-                                    <img :src="tempData.imageUrl[0]" alt="" class="img-fluid">
+                                    <img :src="tempData.imageUrl[0]" :alt="tempData.title"
+                                      class="img-fluid">
                                 </div>
                                 <div class="col-8">
                                     <div class="form-group">
@@ -289,7 +290,6 @@ export default {
         fileUploading: false,
       },
       matchFood: ['蔬菜', '肉類', '海鮮', '水果', '甜點', '飲料', '湯品', '米飯', '麵食', '點綴'],
-      match: [],
     };
   },
   props: ['token'],
