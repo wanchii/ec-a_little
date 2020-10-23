@@ -317,8 +317,12 @@ export default {
             $('#productModal').modal('hide');
           }
         }).catch(() => {
+          this.$bus.$emit(
+            'message:push',
+            '無法取得資料，請重新整理',
+            'danger',
+          );
           this.isLoading = false;
-          this.$router.push('login');
         });
     },
     getDetails(id) {
@@ -412,7 +416,6 @@ export default {
         this.status.fileUploading = false;
       });
     },
-
   },
 
 };
@@ -431,7 +434,6 @@ export default {
       width: 12%;
     }
   }
-
 }
 .customFileInput{
   height: calc(1.5em + 1.25rem + 2px);
