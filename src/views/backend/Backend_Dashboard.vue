@@ -96,7 +96,12 @@ export default {
       this.$http.post(url, { api_token: this.token })
         .then(() => {
           this.checkSuccess = true;
-        }).catch(() => {
+        }).catch((err) => {
+          this.$bus.$emit(
+            'message:push',
+            `出現錯誤 ${err.response.data.message}`,
+            'danger',
+          );
           this.$router.push('/login');
         });
     },
