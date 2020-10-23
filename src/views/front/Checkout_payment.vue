@@ -165,6 +165,7 @@ export default {
       discount: 0,
       isLoading: false,
       isProcessing: false,
+      errorData: [],
     };
   },
   components: {
@@ -190,6 +191,7 @@ export default {
           this.isLoading = false;
         })
         .catch(() => {
+          this.$toast.error('無法取得資料，請聯絡客服');
           this.isLoading = false;
         });
     },
@@ -204,7 +206,9 @@ export default {
           }
           this.isProcessing = false;
         })
-        .catch(() => {
+        .catch((err) => {
+          const errorData = err.response.data.errors;
+          this.$toast.error(`${errorData}`);
           this.isProcessing = false;
         });
     },
