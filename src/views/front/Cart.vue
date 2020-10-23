@@ -38,20 +38,25 @@
                   </button>
                 </td>
                 <td class="align-middle">
-                  <img :src="item.product.imageUrl[0]"
-                    alt="" class="img-detail">
+                  <img
+                    :src="item.product.imageUrl[0]"
+                    :alt="item.product.title"
+                    class="img-detail">
                 </td>
                 <td class="align-middle">{{ item.product.title }}</td>
                 <td class="align-middle">
                   <div class="btn-group cart-btn-group" role="group" aria-label="...">
                     <button type="button" class="btn btn-outline-primary btn-sm"
                       @click="quantityUpdata(item.product.id, item.quantity - 1)"
-                      :disabled="item.quantity == 1">
+                      :disabled="item.quantity === 1">
                       <i class="fas fa-minus"></i>
                     </button>
-                    <input type="text" size="1" value="1" class="text-center border-0"
-                      v-model="item.quantity">
+                    <input type="number" size="1" value="1" min="1" max="15"
+                      class="text-center border-0 p-2"
+                      v-model="item.quantity" disabled>
+
                     <button type="button" class="btn btn-outline-primary btn-sm"
+                      :disabled="item.quantity === 15"
                       @click="quantityUpdata(item.product.id, item.quantity + 1)">
                       <i class="fas fa-plus"></i>
                     </button>
@@ -177,3 +182,10 @@ export default {
 
 };
 </script>
+<style lang="scss" scoped>
+.cart-btn-group{
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+</style>
