@@ -192,7 +192,6 @@
 import Subscribe from '@/components/Subscribe.vue';
 
 export default {
-  name: 'Home',
   components: {
     Subscribe,
   },
