@@ -23,13 +23,6 @@
         <div class="sidebar-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="home"></span>
-                後台管理頁面
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
               <router-link
               to="/admin/products"
               class="nav-link">
@@ -110,7 +103,6 @@ export default {
       this.$router.push('/');
     },
   },
-
 };
 </script>
 
