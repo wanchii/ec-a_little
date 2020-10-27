@@ -51,7 +51,7 @@
                     justify-content-end p-lg-3 p-md-5 p-6 rounded-0"
                     :style="{ backgroundImage: `url(${ item.imageUrl[0] })` }">
                     <router-link :to='`/product/${item.id}`'
-                    class="btn btn-outline-primary-dark mb-3 p-md-2 p-3">
+                    class="btn btn-outline-primary-dark btn-mix mb-3 p-md-2 p-3">
                     商品內容
                     </router-link>
                     <button type="button" class="btn btn-primary p-md-2 p-3"
