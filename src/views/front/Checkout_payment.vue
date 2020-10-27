@@ -40,18 +40,18 @@
                   <tbody>
                     <tr>
                       <td colspan="2">小計</td>
-                      <td class="text-right">NT{{ subTotal }}</td>
+                      <td class="text-right">NT{{ subTotal | currency }}</td>
                     </tr>
                     <tr>
                       <td colspan="2" v-if="order.coupon">{{ order.coupon }}</td>
                       <td colspan="2" v-else class="text-muted"> 沒有使用優惠券</td>
-                      <td class="text-right text-danger">{{ discount }} </td>
+                      <td class="text-right text-danger">{{ discount | currency }} </td>
                     </tr>
                   </tbody>
                   <tfoot>
                     <tr>
                       <td colspan="2" class="font-weight-bold">總共</td>
-                      <td class="text-right font-weight-bold">NT{{ order.amount }}</td>
+                      <td class="text-right font-weight-bold">NT{{ order.amount | currency }}</td>
                     </tr>
                   </tfoot>
                 </table>
@@ -81,18 +81,18 @@
               <tbody>
                 <tr>
                   <td colspan="2">小計</td>
-                  <td class="text-right">NT{{ subTotal }}</td>
+                  <td class="text-right">NT{{ subTotal | currency }}</td>
                 </tr>
                 <tr>
                   <td colspan="2" v-if="order.coupon">{{ order.coupon }}</td>
                   <td colspan="2" v-else class="text-muted"> 沒有使用優惠券</td>
-                  <td class="text-right text-danger">{{ discount }} </td>
+                  <td class="text-right text-danger">{{ discount | currency }} </td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <td colspan="2" class="font-weight-bold">總共</td>
-                  <td class="text-right font-weight-bold">NT{{ order.amount }}</td>
+                  <td class="text-right font-weight-bold">NT{{ order.amount | currency }}</td>
                 </tr>
               </tfoot>
             </table>

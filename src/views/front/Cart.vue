@@ -66,14 +66,14 @@
                   {{ item.product.price | currency }}/{{ item.product.unit }}
                 </td>
                 <td class="text-right align-middle">
-                  {{ item.product.price * item.quantity | currency}}
+                  {{ item.product.price * item.quantity | currency }}
                 </td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
                 <td colspan="5" class="text-right">小計</td>
-                <td class="text-right">{{ cartTotal}}</td>
+                <td class="text-right">{{ cartTotal | currency }}</td>
               </tr>
               <tr v-if=" cartTotal < 490" >
                 <td colspan="6" class="text-right text-danger">未滿490無法出貨</td>
