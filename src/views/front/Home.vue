@@ -46,34 +46,34 @@
         <ul class="list-unstyled">
           <li>
             <div>
-              <a href="#">
+              <router-link :to='`/products`'>
                 <h2>食材</h2>
                 <p>處理肉類、海鮮食材時使用香草或是香料進行醃製可以去除腥味</p>
-              </a>
+              </router-link>
             </div>
           </li>
           <li>
             <div>
-              <a href="#">
+              <router-link :to='`/recipe`'>
                 <h2>料理</h2>
                 <p>選取適合的香料與肉類、海鮮及蔬菜一起烹調，經長時間燉煮後味道更富有層次。</p>
-              </a>
+              </router-link>
             </div>
           </li>
           <li>
             <div>
-              <a href="#">
+              <router-link :to='`/recipe`'>
                 <h2>甜點</h2>
                 <p>加入麵糰中製成麵食、餅乾，也可以特調香料紅酒、雞尾酒。</p>
-              </a>
+              </router-link>
             </div>
           </li>
           <li>
             <div>
-              <a href="#">
+              <router-link :to='`/recipe`'>
                 <h2>點綴</h2>
                 <p>起鍋前 加入香料做提味使用，或是上菜前加點香草擺盤裝飾用</p>
-              </a>
+              </router-link>
             </div>
           </li>
         </ul>
@@ -91,9 +91,8 @@
       <div class="container">
         <div class="row justify-content-end">
           <div class="col-md-6">
-            <div class="px-5"
+            <div class="px-5 introText"
             data-aos="fade-left"
-            data-aos-anchor-placement="top-center"
             >
               <h2 class="mb-4">香草與香料</h2>
                 <p>
