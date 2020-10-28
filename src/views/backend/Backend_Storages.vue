@@ -2,6 +2,9 @@
   <div class="coupons">
     <Loading :active.sync="isLoading" />
       <h2 class="py-3 text-center">圖片列表</h2>
+      <div class="d-flex justify-content-end">
+        <div type="button" class="btn btn-primary mb-3" @click="openModal('new')">新增圖片</div>
+      </div>
       <!-- 表格 -->
       <table class="table product">
         <thead class="font-weight-bold">
@@ -39,8 +42,9 @@
             </td>
             <td class="align-middle">
               <button type="button" class="btn btn-outline-danger"
-                @click="openModel(item)"
-                >刪除</button>
+                @click="openModal('delete',item)">
+                刪除
+              </button>
             </td>
           </tr>
         </tbody>
@@ -48,6 +52,40 @@
       <!-- 頁碼 -->
       <div class="d-flex justify-content-center my-4">
         <pagination :pages="pagination" @update="getStorages"></pagination>
+      </div>
+      <!-- 新增modal -->
+      <div class="modal fade" id="pictureModal"
+        tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-primary-light text-white">
+              <h5 class="modal-title">新增圖片</h5>
+              <button type="button"
+                class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="customFile">
+                  上傳圖片
+                  <i class="fas fa-cog fa-spin"
+                    v-if="status.fileUploading"></i>
+                </label>
+                <input
+                  id="customFile"
+                  ref="file"
+                  type="file"
+                  class="form-control customFileInput"
+                  @change="uploadFile"
+                >
+              </div>
+              <img :src="tempStorage.imageUrl[0]"
+                class="img-fluid">
+            </div>
+          </div>
+        </div>
       </div>
       <!-- 刪除 Modal -->
       <div class="modal fade" id="delModal"
@@ -88,9 +126,14 @@ export default {
   data() {
     return {
       storages: {},
-      tempStorage: {},
+      tempStorage: {
+        imageUrl: [],
+      },
       pagination: {},
       isLoading: false,
+      status: {
+        fileUploading: false,
+      },
     };
   },
   components: {
@@ -109,9 +152,48 @@ export default {
         this.isLoading = false;
       });
     },
-    openModel(item) {
-      this.tempStorage = { ...item };
-      $('#delModal').modal('show');
+    // openModel(item) {
+    //   this.tempStorage = { ...item };
+    //   $('#delModal').modal('show');
+    // },
+    openModal(action, item) {
+      switch (action) {
+        case 'new':
+          this.tempStorage = {
+            imageUrl: [],
+          };
+          $('#pictureModal').modal('show');
+          break;
+        case 'delete':// 刪除
+          this.tempStorage = { ...item };
+          $('#delModal').modal('show');
+          break;
+        default:
+          break;
+      }
+    },
+    uploadFile() {
+      const uploadedFile = this.$refs.file.files[0];
+      const formData = new FormData();
+      formData.append('file', uploadedFile);
+      const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/storage`;
+      this.status.fileUploading = true;
+      this.$http.post(url, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      }).then((response) => {
+        this.status.fileUploading = false;
+        if (response.status === 200) {
+          this.tempStorage.imageUrl.push(response.data.data.path);
+        }
+      }).catch(() => {
+        this.$bus.$emit('message:push',
+          '檔案上傳失敗，請確認檔案大小是否超過 2MB',
+          'danger');
+        this.status.fileUploading = false;
+      });
+      this.getStorages();
     },
     deleteData() {
       this.isLoading = true;
