@@ -37,11 +37,10 @@ export default {
       swiperOption: {
         slidesPerView: 'auto',
         spaceBetween: 16,
-        effect: 'coverflow',
-        speed: 1000,
+        speed: 1200,
         allowTouchMove: true,
         autoplay: {
-          delay: 2500,
+          delay: 2700,
           disableOnInteraction: false,
           stopOnLastSlide: true,
         },
