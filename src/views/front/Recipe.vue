@@ -34,16 +34,15 @@
           </div>
         </div>
       </div>
-      <div class="position-relative text-center" id="chevron" ref="chevron" v-if="this.shown">
+      <div class="position-relative" id="chevron" ref="chevron" v-if="this.shown">
         <span class="scroll">
           <i class="fas fa-chevron-down fa-3x btn-chevron" @click="goDown"></i>
         </span>
       </div>
       <div
         data-aos="fade-up"
-        data-aos-duration="600"
-        class="row flex-row-reverse mb-5 bg-gray-200"
-      >
+        data-aos-duration="500"
+        class="row flex-row-reverse mb-5 bg-gray-200">
         <div
           class="col-md-6 bg-cover"
           style="
@@ -51,7 +50,8 @@
             width: 540px;
             height: 360px;
           "
-        ></div>
+        >
+        </div>
         <div class="col-md-6">
           <div
             class="px-6 d-flex flex-column justify-content-center align-items-center h-100"
@@ -157,6 +157,9 @@ export default {
       shown: true,
     };
   },
+  created() {
+    $('html, body').animate({ scrollTop: 0 }, 0);
+  },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
   },
@@ -190,6 +193,7 @@ export default {
 .scroll{
   position: absolute;
   top: -32px;
+  left: 48%;
   margin-bottom: 3rem;
   .btn-chevron {
     display: block;
