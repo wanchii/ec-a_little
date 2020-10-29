@@ -92,6 +92,7 @@
 </template>
 
 <script>
+/* global $ */
 import Subscribe from '@/components/Subscribe.vue';
 import Pagination from '@/components/Pagination.vue';
 
@@ -115,6 +116,7 @@ export default {
   },
   created() {
     this.getProducts();
+    $('html, body').animate({ scrollTop: 0 }, 0);
   },
   methods: {
     getProducts(page = 1) {
