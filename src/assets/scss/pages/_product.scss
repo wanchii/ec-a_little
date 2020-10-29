@@ -48,6 +48,9 @@
       font-weight: 600;
       transition-duration: 0.3s;
     }
+    .btn-outline-primary-dark {
+      background-color: rgba(white, .6);
+    }
   }
   .card {
     &:hover {
@@ -57,7 +60,6 @@
           transition-duration: 0.3s;
         }
         .btn-outline-primary-dark {
-          background-color: rgba(white, .6);
           &:hover{
             background-color: $primary-dark;
           }
