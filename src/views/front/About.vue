@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row py-5 mb-5">
         <div class="col-md-6">
-          <img src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/nHJYCYy1JPd4Kj0pmz63B1NvhJ24uhJOUz4XqO8WlLQDm6Cer8h4PIuwlRfTaJwVb4ldtAKKBqJoak9wwgTXV9OUwKvmNtnh7Ke5qI55vvUp9XngVcaCqLDpzb1UfQgJ.jpg"
+          <img src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/oXeixLObtztTorcR7ih8nwk4J5oh2WcYsKklUav4QiipZoQVcdCbFEmA5CmP3jJOqTLmBpXvEEPTy75O0OMK8JeVDMIrz8QMhRrirEyEHaFdihpV6Pg8QPDXgVy30t5F.jpg"
             alt="料理書">
         </div>
         <div class="col-md-6">
