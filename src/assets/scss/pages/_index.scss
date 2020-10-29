@@ -65,9 +65,9 @@
   .introText {
     background-color: transparent;
 
-    @include media-breakpoint-down(md) {
-      background-color: rgba(224, 225, 227, .8);
-      box-shadow: 0px 5px 15px rgba(224, 225, 227, .3);
+    @include media-breakpoint-down(sm) {
+      background-color: rgba(230, 231, 233, .8);
+      box-shadow: 0px 5px 15px rgba(230, 231, 233, .3);
     }
   }
 }
