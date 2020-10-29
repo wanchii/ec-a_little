@@ -85,7 +85,7 @@
         <div
         class="col-md-6 bg-cover"
           style="position: absolute; top: 0; bottom: 0;
-          background-image:url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/pe0umY0t0C3r70HaUrY1Sfs4jacYQsFTvIaSe1PrwR6oCnFpUcTLb9SzVXmlLGjiOEEmySKwMSLsRQishUdKoHyneS5ouYJ1mRhHBHfRSJXRfBWyrO5kOtNZUmMdhr4W.jpg)">
+          background-image:url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/oxi4Uq4GbKJNU7E6SjXMzARALcSBmmXZhMYl2sacJaztYVhkBlg3hisxdcyeIFWLHnPC2SjtNjrFCLrRVx95W33vuqHBPslTIfuZ05tz2B25lnx8IrB5J0IDnCZTlyt5.jpg)">
         </div>
       </div>
       <div class="container">
@@ -122,8 +122,17 @@
     <section class="mb-md-7 mb-5 py-7">
       <h2
       class="text-primary-dark font-weight-bold text-center mb-3">美味秘訣</h2>
-      <h4
-      class="font-weight-bold text-center mb-5">就是灑上一點香料，趕快來去購買</h4>
+      <p class="text-center text-primary font-weight-bold">
+        你是不是覺得少一個味道?
+        <br>
+        色香味俱全的料理，除了好食材少不了香料
+        <br>
+        在處理食材時、在烹飪時、在上桌前
+
+      </p>
+      <h4 class="font-weight-bold text-center mb-5">
+        就是灑上一點香料，趕快來去購買
+      </h4>
       <div class="container">
         <div class="row">
           <div
@@ -199,7 +208,7 @@ export default {
 <style lang="scss" scoped>
 
   .banner-bg {
-    background-image: url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/iRbZCUsCtpXoLKneFIqyOQzzPQosgL1n6PmkoWHPpYdNYUGkdU8IPpToE5012PHBVnEuES9vFsVXYwwlPOxsI93gAuq2S0ZZIWAjeXo0O1HRSNcI0lxeGPmfGiXk8jdY.jpg);
+    background-image: url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/zQs1haYcjARTcrAkUqtmYe6WL8Qg4hpMeAO4HhtcSY1baKTjWguYC8qoPWcKkg9KMvMJlrf7GnzPtmrmoum17Au4qoNzu9GtUffZzrJaKyJzy6kYHGwoiBM8uSKjUF4X.jpg);
     position: absolute;
     top: 0;
     bottom: 0;
