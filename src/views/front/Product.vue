@@ -26,30 +26,12 @@
             <p class="pr-5">
                 {{ product.description }}
             </p>
-            <ul class="list-unstyled d-flex">
-              <li  class="mr-2" v-if="product.options.matchVeg">
-                <span class="badge badge-pill badge-info">蔬菜</span>
-              </li>
-              <li  class="mr-2" v-if="product.options.matchSeafood">
-                <span class="badge badge-pill badge-info">海鮮</span>
-              </li>
-              <li  class="mr-2" v-if="product.options.matchMeat">
-                <span class="badge badge-pill badge-info">肉類</span>
-              </li>
-              <li  class="mr-2" v-if="product.options.matchDessert">
-                <span class="badge badge-pill badge-info">甜點</span>
-              </li>
-              <li  class="mr-2" v-if="product.options.matchFruit">
-                <span class="badge badge-pill badge-info">水果</span>
-              </li>
-              <li  class="mr-2" v-if="product.options.matchDrink">
-                <span class="badge badge-pill badge-info">飲料</span>
-              </li>
-              <li  class="mr-2" v-if="product.options.matchDecoration">
-                <span class="badge badge-pill badge-info">點綴</span>
-              </li>
-              <li class="mr-2"  v-if="product.options.matchRice">
-                <span class="badge badge-pill badge-info">米飯</span>
+            <ul class="list-unstyled d-flex" v-if="product.options.match">
+              <li  class="mr-2"
+                v-for="(item, key) in product.options.match" :key="key+2">
+                <span class="badge badge-pill badge-info">
+                  {{ item }}
+                </span>
               </li>
             </ul>
             <div v-if="product.options.packing == '散裝'">
@@ -119,7 +101,9 @@ export default {
   data() {
     return {
       product: {
-        options: {},
+        options: {
+          match: [],
+        },
       },
       quantity: 1,
       status: {
