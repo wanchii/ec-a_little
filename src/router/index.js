@@ -33,18 +33,19 @@ const routes = [
       path: '/recipe',
       component: () => import('../views/front/Recipe.vue'),
     },
-    {
-      path: '/checkout_order',
-      component: () => import('../views/front/Checkout_order.vue'),
-    },
-    {
-      path: '/checkout_payment/:id',
-      component: () => import('../views/front/Checkout_payment.vue'),
-    }, {
-      path: '/welldone',
-      component: () => import('../views/front/Welldone.vue'),
-    },
+
     ],
+  },
+  {
+    path: '/checkout_order',
+    component: () => import('../views/front/Checkout_order.vue'),
+  },
+  {
+    path: '/checkout_payment/:id',
+    component: () => import('../views/front/Checkout_payment.vue'),
+  }, {
+    path: '/welldone',
+    component: () => import('../views/front/Welldone.vue'),
   },
   {
     path: '/login',
