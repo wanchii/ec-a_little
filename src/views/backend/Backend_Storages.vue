@@ -152,10 +152,6 @@ export default {
         this.isLoading = false;
       });
     },
-    // openModel(item) {
-    //   this.tempStorage = { ...item };
-    //   $('#delModal').modal('show');
-    // },
     openModal(action, item) {
       switch (action) {
         case 'new':
@@ -164,7 +160,7 @@ export default {
           };
           $('#pictureModal').modal('show');
           break;
-        case 'delete':// 刪除
+        case 'delete':
           this.tempStorage = { ...item };
           $('#delModal').modal('show');
           break;
@@ -187,6 +183,7 @@ export default {
         if (response.status === 200) {
           this.tempStorage.imageUrl.push(response.data.data.path);
         }
+        this.getStorages();
       }).catch(() => {
         this.$bus.$emit('message:push',
           '檔案上傳失敗，請確認檔案大小是否超過 2MB',
