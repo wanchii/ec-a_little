@@ -169,59 +169,13 @@
                                     </div>
                                     <div class="form-group">
                                         <p class="mb-0">適配</p>
-                                        <!-- <div  v-for="(item, key) in matchFood" :key="key+1"
+                                        <div  v-for="(item, key) in matchFood" :key="key+1"
                                           class="px-2  form-check form-check-inline">
                                           <input type="checkbox"  class="form-check-input"
                                             v-model="tempData.options.match" :value="item">
                                           <label class="form-check-label">
                                             {{ item }}
                                           </label>
-                                        </div> -->
-                                        <div class="px-2">
-                                          <input type="checkbox"
-                                          id="matchVeg"
-                                          v-model="tempData.options.match" value="蔬菜">
-                                          <label for="matchVeg">蔬菜</label>
-                                        </div>
-                                        <div class="px-2">
-                                          <input type="checkbox" id="matchSeafood"
-                                          v-model="tempData.options.match">
-                                          <label for="matchSeafood">海鮮</label>
-                                        </div>
-                                        <div class="px-2">
-                                          <input type="checkbox" id="match"
-                                          v-model="tempData.options.matchMeat">
-                                          <label for="match">肉類</label>
-                                        </div>
-                                        <div class="px-2">
-                                          <input type="checkbox" id="match"
-                                          v-model="tempData.options.matchDessert">
-                                          <label for="match">甜點</label>
-                                        </div>
-                                        <div class="px-2">
-                                          <input type="checkbox" id="match"
-                                          v-model="tempData.options.matchFruit">
-                                          <label for="match">水果</label>
-                                        </div>
-                                        <div class="px-2">
-                                          <input type="checkbox" id="match"
-                                          v-model="tempData.options.matchDrink">
-                                          <label for="match">飲料</label>
-                                        </div>
-                                        <div class="px-2">
-                                          <input type="checkbox" id="match"
-                                          v-model="tempData.options.matchDecoration">
-                                          <label for="match">點綴</label>
-                                        </div>
-                                        <div class="px-2">
-                                          <input type="checkbox" id="match"
-                                          v-model="tempData.options.matchRice">
-                                          <label for="match">米飯</label>
-                                        </div>
-                                        <div class="px-2">
-                                          <input type="checkbox" id="match"
-                                          v-model="tempData.options.matchSoup">
-                                          <label for="match">湯品</label>
                                         </div>
                                     </div>
                                     <div class="form-group form-check">
@@ -312,7 +266,9 @@ export default {
           if (this.tempData.id) {
             this.tempData = {
               imageUrl: [],
-              options: {},
+              options: {
+                match: [],
+              },
             };
             $('#productModal').modal('hide');
           }
@@ -338,7 +294,9 @@ export default {
         case 'new':
           this.tempData = {
             imageUrl: [],
-            options: {},
+            options: {
+              match: [],
+            },
           };
           $('#productModal').modal('show');
           break;
