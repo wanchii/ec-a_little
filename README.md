@@ -2,7 +2,23 @@
 
 [DEMO](https://wanchii.github.io/ec-a_little/#/)
 
-## 頁面
+## 技術
+- Vue Cli
+- Vue Router
+- 串接 API
+- ESlint
+- Bootstrap 4
+
+## 使用套件
+- vue-loading-overlay
+- vee-validate
+- axios、vue-axios
+- aos
+- vue-clipboard2
+- vue-toastification
+- vue2-editor
+
+## 內容
 
 **首頁**
 
