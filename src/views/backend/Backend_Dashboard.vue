@@ -76,6 +76,7 @@ export default {
     };
   },
   created() {
+    this.token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, '$1');
     this.checkLogin();
   },
   mounted() {
@@ -83,12 +84,11 @@ export default {
   },
   methods: {
     checkLogin() {
-      this.token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, '$1');
-      this.$http.defaults.headers.common.Authorization = `Bearer ${this.token}`;
       const url = `${process.env.VUE_APP_APIPATH}auth/check`;
       this.$http.post(url, { api_token: this.token })
         .then(() => {
           this.checkSuccess = true;
+          this.$http.defaults.headers.common.Authorization = `Bearer ${this.token}`;
         }).catch((err) => {
           this.$bus.$emit(
             'message:push',
