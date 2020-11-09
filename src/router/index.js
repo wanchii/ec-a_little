@@ -7,7 +7,7 @@ const routes = [
 
   {
     path: '/',
-    component: () => import('../views/front/Layout.vue'),
+    component: () => import('../views/layout/LayoutA.vue'),
     children: [{
       path: '',
       component: () => import('../views/front/Home.vue'),
@@ -33,20 +33,25 @@ const routes = [
       path: '/recipe',
       component: () => import('../views/front/Recipe.vue'),
     },
-
     ],
   },
   {
-    path: '/checkout_order',
-    component: () => import('../views/front/Checkout_order.vue'),
+    path: '/',
+    component: () => import('../views/layout/LayoutB.vue'),
+    children: [
+      {
+        path: '/checkout_order',
+        component: () => import('../views/front/Checkout_order.vue'),
+      }, {
+        path: '/checkout_payment/:id',
+        component: () => import('../views/front/Checkout_payment.vue'),
+      }, {
+        path: '/welldone',
+        component: () => import('../views/front/Welldone.vue'),
+      },
+    ],
   },
-  {
-    path: '/checkout_payment/:id',
-    component: () => import('../views/front/Checkout_payment.vue'),
-  }, {
-    path: '/welldone',
-    component: () => import('../views/front/Welldone.vue'),
-  },
+
   {
     path: '/login',
     component: () => import('../views/Login.vue'),
