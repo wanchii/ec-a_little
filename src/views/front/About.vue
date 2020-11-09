@@ -1,5 +1,5 @@
 <template>
-<section>
+  <section>
     <div class="container">
       <div class="row py-5 mb-5">
         <div class="col-md-6">
@@ -39,5 +39,19 @@
         後來想跟大家分享這些來自世界各地的香味。
       </h2>
     </div>
-</section>
+  </section>
 </template>
+
+<script>
+
+export default {
+  data() {
+    return {
+    };
+  },
+};
+</script>
+
+<style>
+
+</style>
