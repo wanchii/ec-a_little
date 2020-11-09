@@ -9,13 +9,12 @@ import {
   configure,
   localize,
   extend,
-} from 'vee-validate'; // 驗證套件
-import * as rules from 'vee-validate/dist/rules'; // 規則檔案（ex: email...）
-import zhTW from 'vee-validate/dist/locale/zh_TW.json'; // 語系檔案
+} from 'vee-validate';
+import * as rules from 'vee-validate/dist/rules';
+import zhTW from 'vee-validate/dist/locale/zh_TW.json';
 import Vue2Editor from 'vue2-editor';
-
-import VueClipboard from 'vue-clipboard2'; // 複製套件
-import Toast from 'vue-toastification'; // 訊息提示套件
+import VueClipboard from 'vue-clipboard2';
+import Toast from 'vue-toastification';
 import 'vue-toastification/dist/index.css';
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/swiper-bundle.css';
