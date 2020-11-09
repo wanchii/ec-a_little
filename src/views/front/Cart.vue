@@ -12,7 +12,7 @@
         <h2 class="text-secondary mb-3">購物車內容</h2>
         <div class="d-flex align-items-end bg-light p-2 mb-2">
           <h5 class="font-weight-bold text-primary">目前有 {{ cartSubTotal }} 筆</h5>
-          <a href="#" class="btn btn-outline-danger rounded-0 ml-auto" type="button"
+          <a href="#" class="btn btn-outline-danger rounded-0 ml-auto"
             @click.prevent="removeAllCart">
             清空購物車
           </a>
@@ -54,7 +54,6 @@
                     <input type="number" size="1" value="1" min="1" max="15"
                       class="text-center border-0 p-2"
                       v-model="item.quantity" disabled>
-
                     <button type="button" class="btn btn-outline-primary btn-sm"
                       :disabled="item.quantity === 15"
                       @click="quantityUpdata(item.product.id, item.quantity + 1)">
@@ -104,7 +103,7 @@
             to="/products"
             class="text-primary-dark d-flex align-items-center justify-content-center empty">
             <h4 class="font-weight-bold mb-0 mr-2">購物車沒有商品，趕快來去選購</h4>
-            <img src="../../assets/images/runner.png" alt="" class="run">
+            <img src="../../assets/images/runner.png" alt="跑步的人" class="run">
           </router-link>
         </div>
       </div>
@@ -133,16 +132,20 @@ export default {
     getCart() {
       this.isLoading = true;
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`;
-      this.$http.get(url).then((res) => {
-        this.carts = res.data.data;
-        this.cartSubTotal = res.data.data.length;
-        this.$bus.$emit('update-total');
-        this.cartTotal = 0;
-        this.carts.forEach((item) => {
-          this.cartTotal += item.product.price * item.quantity;
+      this.$http.get(url)
+        .then((res) => {
+          this.carts = res.data.data;
+          this.cartSubTotal = res.data.data.length;
+          this.$bus.$emit('update-total');
+          this.cartTotal = 0;
+          this.carts.forEach((item) => {
+            this.cartTotal += item.product.price * item.quantity;
+          });
+          this.isLoading = false;
+        }).catch(() => {
+          this.$toast.error('無法取得資料，請重新整理');
+          this.isLoading = false;
         });
-        this.isLoading = false;
-      });
     },
     removeAllCart() {
       this.isLoading = true;
@@ -154,16 +157,23 @@ export default {
           });
           this.getCart();
           this.isLoading = false;
+        }).catch(() => {
+          this.$toast.error('購物車刪除失敗');
+          this.isLoading = false;
         });
     },
     removeCartItem(id, name) {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping/${id}`;
-      this.$http.delete(url).then(() => {
-        this.$toast.warning(`${name}已刪除`, {
-          icon: 'far fa-trash-alt',
+      this.$http.delete(url)
+        .then(() => {
+          this.$toast.warning(`${name}已刪除`, {
+            icon: 'far fa-trash-alt',
+          });
+          this.getCart();
+        }).catch(() => {
+          this.$toast.error('商品刪除失敗');
+          this.isLoading = false;
         });
-        this.getCart();
-      });
     },
     quantityUpdata(id, num) {
       if (num <= 0) return;
@@ -173,10 +183,14 @@ export default {
         product: id,
         quantity: num,
       };
-      this.$http.patch(url, data).then(() => {
-        this.getCart();
-        this.isLoading = false;
-      });
+      this.$http.patch(url, data)
+        .then(() => {
+          this.getCart();
+          this.isLoading = false;
+        }).catch(() => {
+          this.$toast.error('數量更新失敗');
+          this.isLoading = false;
+        });
     },
   },
 
