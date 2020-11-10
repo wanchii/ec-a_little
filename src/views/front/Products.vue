@@ -1,4 +1,3 @@
-/* eslint-disable prefer-arrow-callback */
 <template>
   <div>
     <loading :active.sync="isLoading" loader='dots'></loading>
@@ -35,56 +34,56 @@
     <section class="products py-5 mb-md-7 mb-5">
       <div class="container">
         <h2 class="text-primary-dark font-weight-bold ">{{ categoryName }}</h2>
-          <div class="row">
-            <div class="col-12">
-              <div class="d-flex">
-                <p class="pr-2">共 {{ tempProducts.length }} 項</p>
-              </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="d-flex">
+              <p class="pr-2">共 {{ tempProducts.length }} 項</p>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-12 mb-4"
-              v-for="item in tempProducts" :key="item.id">
-              <div class="card border-0">
-                <router-link :to='`/product/${item.id}`' class="text-decoration-none">
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-12 mb-4"
+            v-for="item in tempProducts" :key="item.id">
+            <div class="card border-0">
+              <router-link :to='`/product/${item.id}`' class="text-decoration-none">
                 <div class="card-img bg-cover d-flex flex-column
-                    justify-content-end p-lg-3 p-md-5 p-6 rounded-0"
-                    :style="{ backgroundImage: `url(${ item.imageUrl[0] })` }">
-                    <router-link :to='`/product/${item.id}`'
+                  justify-content-end p-lg-3 p-md-5 p-6 rounded-0"
+                  :style="{ backgroundImage: `url(${item.imageUrl[0]})` }">
+                  <router-link :to='`/product/${item.id}`'
                     class="btn btn-outline-primary-dark btn-mix mb-3 p-md-2 p-3">
                     商品內容
-                    </router-link>
-                    <button type="button" class="btn btn-primary p-md-2 p-3"
-                      :disabled="status.loadingItem === item.id"
-                      @click.prevent="addToCart(item.id, item.title)">
-                      <i v-if="status.loadingItem === item.id"
+                  </router-link>
+                  <button type="button" class="btn btn-primary p-md-2 p-3"
+                    :disabled="status.loadingItem === item.id"
+                    @click.prevent="addToCart(item.id, item.title)">
+                    <i v-if="status.loadingItem === item.id"
                       class="fas fa-circle-notch fa-spin"></i>
-                      加到購物車
-                    </button>
-                  </div>
-                  <div class="card-body text-center p-2">
-                    <div class="position-relative">
-                      <span class="badge badge-secondary"
+                    加到購物車
+                  </button>
+                </div>
+                <div class="card-body text-center p-2">
+                  <div class="position-relative">
+                    <span class="badge badge-secondary"
                       style="position:absolute; top:0; right:0;">
-                        {{ item.category }}
-                      </span>
-                      <h4 class="card-title mb-1 text-primary-dark font-weight-bold">
-                        {{ item.title }}
-                      </h4>
-                    </div>
-                    <p class="card-text text-primary">
-                      NT$ {{ item.price  }} / {{ item.unit }}
-                    </p>
+                      {{ item.category }}
+                    </span>
+                    <h4 class="card-title mb-1 text-primary-dark font-weight-bold">
+                      {{ item.title }}
+                    </h4>
                   </div>
-                </router-link>
-              </div>
+                  <p class="card-text text-primary">
+                    NT$ {{ item.price  }} / {{ item.unit }}
+                  </p>
+                </div>
+              </router-link>
             </div>
           </div>
-          <!-- 分頁碼 -->
-          <div class="d-flex justify-content-center mt-4"
+        </div>
+        <!-- 分頁碼 -->
+        <div class="d-flex justify-content-center mt-4"
           v-if="categoryName === '全部'">
-            <pagination :pages="pagination" @update="getProducts"></pagination>
-          </div>
+          <pagination :pages="pagination" @update="getProducts"></pagination>
+        </div>
       </div>
     </section>
     <Subscribe />
@@ -182,3 +181,7 @@ export default {
   },
 };
 </script>
+
+<style>
+
+</style>
