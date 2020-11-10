@@ -2,18 +2,14 @@
   <section class="mt-7">
     <div class="container">
       <div class="row mb-6 bg-light">
-        <div
-          class="col-md-6 bg-cover"
+        <div class="col-md-6 bg-cover"
           style="
             background-image: url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/ou0IT4Cl1tTWgwxT0NfsCQ1Tv30KdLNP2cA8qqhZykwLlNBkb4ayT4V8HZJfpH3gGJFpiYhyeaVcNIF8Uknd8rVdRmu1gtd6fhXvPY7LJH8QFYMWt3lQMlHWlPAfxMdL.jpg);
             width: 540px;
-            height: 360px;
-          "
-        ></div>
+            height: 360px;">
+        </div>
         <div class="col-md-6">
-          <div
-            class="px-6 d-flex flex-column justify-content-center align-items-center h-100"
-          >
+          <div class="px-6 d-flex flex-column justify-content-center align-items-center h-100">
             <h3 class="font-weight-bold text-primary-dark">風琴馬鈴薯</h3>
             <small class="text-primary">烤好的馬鈴薯就像風琴一樣綻放</small>
             <div class="mb-3 lh-2">
@@ -39,23 +35,17 @@
           <i class="fas fa-chevron-down fa-3x btn-chevron" @click="goDown"></i>
         </span>
       </div>
-      <div
+      <div class="row flex-row-reverse mb-5 bg-gray-200"
         data-aos="fade-up"
-        data-aos-duration="500"
-        class="row flex-row-reverse mb-5 bg-gray-200">
-        <div
-          class="col-md-6 bg-cover"
+        data-aos-duration="500">
+        <div  class="col-md-6 bg-cover"
           style="
             background-image: url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/nRsWNS0mQxfzkm9BuA4mjXOqtxA6V3W4kVxDyeads3cICSkSVE0u1PlgSraI7edmDfUFK3bKjsGatEt9eUXn44MSG1RILoYItiDRGzjnlJvR8yHH7FY5XMwYdbHwCws7.jpg);
             width: 540px;
-            height: 360px;
-          "
-        >
+            height: 360px;">
         </div>
         <div class="col-md-6">
-          <div
-            class="px-6 d-flex flex-column justify-content-center align-items-center h-100"
-          >
+          <div  class="px-6 d-flex flex-column justify-content-center align-items-center h-100">
             <h3 class="font-weight-bold text-primary-dark">蜂蜜肉桂烤梨</h3>
             <small class="text-primary">肉桂的香氣，搭配蜂蜜的甜</small>
             <div class="mb-3 lh-2">
@@ -76,19 +66,15 @@
           </div>
         </div>
       </div>
-      <div data-aos="fade-up" data-aos-duration="500" class="row mb-5 bg-light">
-        <div
-          class="col-md-6 bg-cover"
+      <div class="row mb-5 bg-light"
+        data-aos="fade-up" data-aos-duration="500">
+        <div  class="col-md-6 bg-cover"
           style="
             background-image: url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/qydSmgPhIVJeAwj8piVRMWKFatIE6MnOrNUFxIO3Ww3x2RwunyhxpVj7wrd2vXyuVV1RpfCZIddGSMOHD6KcP4IYGFWDP19I77cdcUtCsbF0hotKAE40X8OkwozjLRz6.jpg);
             width: 540px;
-            height: 360px;
-          "
-        ></div>
+            height: 360px;"></div>
         <div class="col-md-6">
-          <div
-            class="px-6 d-flex flex-column justify-content-center align-items-center h-100"
-          >
+          <div  class="px-6 d-flex flex-column justify-content-center align-items-center h-100">
             <h3 class="font-weight-bold text-primary-dark">佛卡夏</h3>
             <small class="text-primary">麵包與橄欖油搭配，絕妙</small>
             <div class="mb-3 lh-2">
@@ -109,23 +95,16 @@
           </div>
         </div>
       </div>
-      <div
+      <div class="row flex-row-reverse mb-5 bg-gray-200"
         data-aos="fade-up"
-        data-aos-duration="500"
-        class="row flex-row-reverse mb-5 bg-gray-200"
-      >
-        <div
-          class="col-md-6 bg-cover"
+        data-aos-duration="500">
+        <div  class="col-md-6 bg-cover"
           style="
             background-image: url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/eLUsgBpGZ2LMaF2uojC7wrfpACE87LInW2sW64wqgBYHSgxAIOsRLlqc3DHCJGrCXt7LSgfaHZHJEIQOCl67AaxrbckPhmY02fQwx0UDu65Gdl0WxGfqsB5HSzU5Ecgl.jpg);
             width: 540px;
-            height: 360px;
-          "
-        ></div>
+            height: 360px;"></div>
         <div class="col-md-6">
-          <div
-            class="px-6 d-flex flex-column justify-content-center align-items-center h-100"
-          >
+          <div  class="px-6 d-flex flex-column justify-content-center align-items-center h-100">
             <h3 class="font-weight-bold text-primary-dark">香料紅酒</h3>
             <small class="text-primary mb-2">溫暖的紅酒，從胃開始暖呼呼</small>
             <div class="mb-3 lh-2">
@@ -148,7 +127,7 @@
 </template>
 
 <script>
-import $ from 'jquery';
+/* global $ */
 
 export default {
   data() {
@@ -209,9 +188,12 @@ export default {
     50% {
       transform: translate(0, 10px);
     }
-  100% {
+    100% {
       transform: translate(0, 0);
     }
+  }
+  @media (max-width: 1024px) {
+    display: none;
   }
 }
 </style>
