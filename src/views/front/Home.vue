@@ -3,8 +3,7 @@
     <!-- banner 區域 -->
     <section class="banner container position-relative mb-md-7 mb-5 py-7">
       <div class="row flex-row-reverse">
-        <div class="col-lg-9 col-md-7 bg-cover banner-bg">
-        </div>
+        <div class="col-lg-9 col-md-7 bg-cover banner-bg"></div>
         <div class="container">
           <div class="row justify-content-md-start py-7">
             <div class="col-lg-3 col-md-5">
@@ -83,7 +82,7 @@
     <section class="intro container-fluid bg-primary-light position-relative mb-md-7 mb-5 py-7">
       <div class="row">
         <div
-        class="col-md-6 bg-cover"
+          class="col-md-6 bg-cover"
           style="position: absolute; top: 0; bottom: 0;
           background-image:url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/oxi4Uq4GbKJNU7E6SjXMzARALcSBmmXZhMYl2sacJaztYVhkBlg3hisxdcyeIFWLHnPC2SjtNjrFCLrRVx95W33vuqHBPslTIfuZ05tz2B25lnx8IrB5J0IDnCZTlyt5.jpg)">
         </div>
@@ -92,27 +91,26 @@
         <div class="row justify-content-end">
           <div class="col-md-6">
             <div class="px-5 introText"
-            data-aos="fade-left"
-            >
+              data-aos="fade-left">
               <h2 class="mb-4">香草與香料</h2>
-                <p>
-                  英文裡區分香草（herb）和香辛料（spice）。一般香草植物會用到植物的綠葉或是花（可能是新鮮的或是曬乾的）
-                  ，而香辛料會用到植物的其他部位，例如種子、漿果、樹皮、根及果實，而且多半會乾燥後使用。
-                  Herb在在植物學中是指所有草本植物，不論是否可以用作香料。藥草在英語裡也稱為herb，但包含藥用植物的
-                  葉、根、花、種子、樹皮、維管形成層、樹脂及果皮。
-                </p>
-                <h4>香草</h4>
-                <p>一般香草植物會用到植物的綠葉或是花（可能是新鮮的或是曬乾的），常見的香草，百里香、迷迭香、薄荷、檸檬香茅等</p>
-                <h4>香料</h4>
-                <p>
-                    香料，或名辛香料或香辛料，是一些乾的植物的種子、果實、根、樹皮做成的調味料的總稱，
-                    例如胡椒、丁香、肉桂等。它們主要是被用於為食物增加香味，而不是提供營養。
-                </p>
-                <router-link class="btn btn-outline-primary-dark"
-                  to="/products">
-                  了解更多
-                    <i class="fas fa-long-arrow-alt-right"></i>
-                </router-link>
+              <p>
+                英文裡區分香草（herb）和香辛料（spice）。一般香草植物會用到植物的綠葉或是花（可能是新鮮的或是曬乾的）
+                ，而香辛料會用到植物的其他部位，例如種子、漿果、樹皮、根及果實，而且多半會乾燥後使用。
+                Herb在在植物學中是指所有草本植物，不論是否可以用作香料。藥草在英語裡也稱為herb，但包含藥用植物的
+                葉、根、花、種子、樹皮、維管形成層、樹脂及果皮。
+              </p>
+              <h4>香草</h4>
+              <p>一般香草植物會用到植物的綠葉或是花（可能是新鮮的或是曬乾的），常見的香草，百里香、迷迭香、薄荷、檸檬香茅等</p>
+              <h4>香料</h4>
+              <p>
+                香料，或名辛香料或香辛料，是一些乾的植物的種子、果實、根、樹皮做成的調味料的總稱，
+                例如胡椒、丁香、肉桂等。它們主要是被用於為食物增加香味，而不是提供營養。
+              </p>
+              <router-link class="btn btn-outline-primary-dark"
+                to="/products">
+                了解更多
+                <i class="fas fa-long-arrow-alt-right"></i>
+              </router-link>
             </div>
           </div>
         </div>
@@ -121,39 +119,40 @@
     <!-- tips用在 -->
     <section class="mb-md-7 mb-5 py-7">
       <h2
-      class="text-primary-dark font-weight-bold text-center mb-3">美味秘訣</h2>
+        class="text-primary-dark font-weight-bold text-center mb-3">
+        美味秘訣
+      </h2>
       <p class="text-center text-primary font-weight-bold">
         你是不是覺得少一個味道?
         <br>
         色香味俱全的料理，除了好食材少不了香料
         <br>
         在處理食材時、在烹飪時、在上桌前
-
       </p>
       <h4 class="font-weight-bold text-center mb-5">
         就是灑上一點香料，趕快來去購買
       </h4>
       <div class="container">
         <div class="row">
-          <div
-          data-aos="fade-down-right"
-          class="col-lg-6 col-12">
+          <div data-aos="fade-down-right"
+            class="col-lg-6 col-12">
               <div class="row">
                 <div class="col-5">
-                  <div class="bg-cover mb-4" style="background-image:url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/76ndp4axnNsaHcyL9frICyWpbJy34WAdTeVbJUhTzJZKkt1jHJQkP0g4UaRq2msguLyFxs0k1L5A6U27Qj4w1vcWwAHT29Cxnt5CR41Ly2uPWVa4qPNl2RraSnk71E0u.jpg);
+                  <div class="bg-cover mb-4"
+                    style="background-image:url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/76ndp4axnNsaHcyL9frICyWpbJy34WAdTeVbJUhTzJZKkt1jHJQkP0g4UaRq2msguLyFxs0k1L5A6U27Qj4w1vcWwAHT29Cxnt5CR41Ly2uPWVa4qPNl2RraSnk71E0u.jpg);
                     width:auto;height: 318px;">
                   </div>
                 </div>
                 <div class="col-7">
-                  <div class="bg-cover mb-4" style="background-image: url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/Dn3ufQQGCNt5yOR3W3XQTt0BVMGBgpjq24J5Oe8izKx8MWAmsRTF0N1VpmWntCDCGvYb79lQMWEMGvbVxpYYRW9n9sDMlaTebDNFbm0RQBVSMlSPlTgrH0bnWjDrUvuy.jpg);
+                  <div class="bg-cover mb-4"
+                    style="background-image: url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/Dn3ufQQGCNt5yOR3W3XQTt0BVMGBgpjq24J5Oe8izKx8MWAmsRTF0N1VpmWntCDCGvYb79lQMWEMGvbVxpYYRW9n9sDMlaTebDNFbm0RQBVSMlSPlTgrH0bnWjDrUvuy.jpg);
                     width: auto;height: 318px;">
                   </div>
                 </div>
               </div>
           </div>
-          <div
-          data-aos="fade-down-left"
-          class="col-lg-6 col-12">
+          <div data-aos="fade-down-left"
+            class="col-lg-6 col-12">
             <div class="row">
               <div class="col-4">
                 <div class="cube bg-cover mb-4 hover-bg"
@@ -161,8 +160,7 @@
                 </div>
               </div>
               <div class="col-4">
-                <div
-                class="cube bg-cover mb-4"
+                <div class="cube bg-cover mb-4"
                   style="background-image:url(https://hexschool-api.s3.us-west-2.amazonaws.com/custom/991eoALHUfyynIFattoD7JulcwsHU1xDEoy8XMw0EJVXTdz7NV7nwUWdDmhAXmY3rMj5vQkOBoozxnn4DRzD7Ug1TS33To7YbzAgs0oZtotYhrCWZ1d4Zfj629duP8YU.jpg);">
                 </div>
               </div>
