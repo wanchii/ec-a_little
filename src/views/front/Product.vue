@@ -6,9 +6,15 @@
       <div class="row">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#">首頁</a></li>
-            <li class="breadcrumb-item"><a href="#">產品</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ product.title }}</li>
+            <li class="breadcrumb-item">
+              <router-link to="/">首頁</router-link>
+            </li>
+            <li class="breadcrumb-item">
+              <router-link to="/products">全部產品</router-link>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              {{ product.title }}
+            </li>
           </ol>
         </nav>
       </div>
@@ -24,7 +30,7 @@
             <h3 class="font-weight-bold py-3">{{ product.title }}</h3>
             <h3 class="pb-3">NT${{ product.price }}/ <small>{{ product.unit }}</small></h3>
             <p class="pr-5">
-                {{ product.description }}
+              {{ product.description }}
             </p>
             <ul class="list-unstyled d-flex" v-if="product.options.match">
               <li  class="mr-2"
@@ -39,7 +45,9 @@
                 <i class="fas fa-info-circle"></i>
                 下單重點
                 </h6>
-              <p>散裝，最低出貨量為10g，也就是一單位為10g
+              <p>
+                <span class="text-danger font-weight-bold">散裝</span>
+                ，最低出貨量為10g，也就是一單位為10g
                 <br>
               若需要20g，商品數量請選擇2個，出貨時會幫你裝成一袋，以此類推</p>
             </div>
@@ -48,21 +56,24 @@
                 <i class="fas fa-info-circle"></i>
                 下單重點
               </h6>
-              <p>袋裝，一袋為40g
+              <p>
+                <span class="text-danger font-weight-bold">袋裝</span>
+                ，一袋為40g
                 <br>
                 當日清晨採收，保存最佳香氣
               </p>
             </div>
             <div class="d-flex mt-auto">
-                <input type="number" size="1" value="1" min="1"
+              <input type="number" size="1" value="1" min="1"
                 class="text-center num-control-input">
-                <button type="button" class="btn btn-primary rounded-0 p-2 ml-3"
-                      :disabled="status.loadingItem === product.id"
-                      @click.prevent="addToCart(product.id, product.title)">
-                      <i v-if="status.loadingItem === product.id"
-                      class="fas fa-circle-notch fa-spin"></i>
-                      加到購物車
-                </button>
+              <button type="button"
+                class="btn btn-primary rounded-0 p-2 ml-3"
+                :disabled="status.loadingItem === product.id"
+                @click.prevent="addToCart(product.id, product.title)">
+                <i v-if="status.loadingItem === product.id"
+                  class="fas fa-circle-notch fa-spin"></i>
+                  加到購物車
+              </button>
             </div>
           </div>
         </div>
@@ -78,8 +89,7 @@
               <h4 class="pb-3"><span class="text-underline">料理小撇步</span></h4>
               <div  v-html="product.options.recipe" />
             </div>
-            <div class="mb-4" v-else >
-            </div>
+            <div class="mb-4" v-else ></div>
           </div>
         </div>
       </div>
@@ -87,15 +97,14 @@
   </section>
   <section class="related container mb-5 px-5">
     <h3 class="font-weight-bold mb-4">再加點...</h3>
-      <Related :swiper-list="selected" @update="refreshPage" />
+    <Related :swiper-list="selected" @update="refreshPage" />
   </section>
 </div>
-
 </template>
 
 <script>
+/* global $ */
 import Related from '@/components/Related.vue';
-import $ from 'jquery';
 
 export default {
   data() {
@@ -113,6 +122,7 @@ export default {
       tempData: [],
       selected: [],
       page_id: '',
+      errorData: [],
       isLoading: false,
     };
   },
@@ -135,8 +145,9 @@ export default {
         this.$toast.success(`${name}加入購物車`);
         this.$bus.$emit('update-total');
         this.status.loadingItem = '';
-      }).catch(() => {
-        this.$toast.error(`${name}加入購物車失敗`);
+      }).catch((err) => {
+        const errorData = err.response.data.errors;
+        this.$toast.error(`${errorData}`);
         this.status.loadingItem = '';
       });
     },
@@ -145,6 +156,9 @@ export default {
       this.$http.get(`${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/product/${id}`)
         .then((res) => {
           this.product = res.data.data;
+          this.isLoading = false;
+        }).catch(() => {
+          this.$toast.error('無法取得資料，請重新整理');
           this.isLoading = false;
         });
       this.getProducts();
@@ -157,6 +171,8 @@ export default {
           this.products = res.data.data;
           this.tempData = [...this.products];
           this.filterId();
+        }).catch(() => {
+          this.$toast.error('無法取得資料，請重新整理');
         });
     },
     filterId() {
@@ -179,7 +195,6 @@ export default {
       this.selected = [];
       this.getProduct(id);
     },
-
   },
 };
 </script>
