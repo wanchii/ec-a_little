@@ -87,7 +87,7 @@
       </div>
     </section>
     <Subscribe />
-</div>
+  </div>
 </template>
 
 <script>
