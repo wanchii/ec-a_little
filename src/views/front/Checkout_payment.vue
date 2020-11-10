@@ -1,7 +1,6 @@
 <template>
 <div>
   <loading :active.sync="isLoading" loader='dots'></loading>
-  <NavbarSimple />
   <div class="container">
     <div class="row">
       <div class="col-lg-5 col-md-12 col-12 order-1 order-md-2 mb-4 mb-md-0">
@@ -140,18 +139,14 @@
                     </button>
                 </div>
           </div>
-          <FooterSimple />
         </div>
       </div>
-
     </div>
   </div>
 </div>
 </template>
 
 <script>
-import NavbarSimple from '@/components/Navbar-simple.vue';
-import FooterSimple from '@/components/Footer-simple.vue';
 
 export default {
   data() {
@@ -167,10 +162,6 @@ export default {
       isProcessing: false,
       errorData: [],
     };
-  },
-  components: {
-    NavbarSimple,
-    FooterSimple,
   },
   created() {
     this.orderId = this.$route.params;

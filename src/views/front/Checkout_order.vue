@@ -1,7 +1,6 @@
 <template>
 <div>
   <loading :active.sync="isLoading" loader='dots'></loading>
-  <NavbarSimple />
   <div class="container">
     <div class="row">
       <div class="col-lg-5 col-md-12 col-12 order-1 order-md-2 mb-4 mb-md-0">
@@ -238,7 +237,6 @@
                 </form>
               </validation-observer>
           </div>
-          <FooterSimple />
         </div>
       </div>
     </div>
@@ -247,15 +245,12 @@
 </template>
 
 <script>
-import NavbarSimple from '@/components/Navbar-simple.vue';
-import FooterSimple from '@/components/Footer-simple.vue';
 
 export default {
   data() {
     return {
       carts: [],
       cartTotal: 0,
-      cartSubTotal: 0,
       coupon_code: '',
       coupon: {},
       discount: 0,
@@ -272,10 +267,6 @@ export default {
       isProcessing: false,
     };
   },
-  components: {
-    NavbarSimple,
-    FooterSimple,
-  },
   created() {
     this.getCart();
   },
@@ -288,14 +279,18 @@ export default {
     getCart() {
       this.isLoading = true;
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`;
-      this.$http.get(url).then((res) => {
-        this.carts = res.data.data;
-        this.cartTotal = 0;
-        this.carts.forEach((item) => {
-          this.cartTotal += item.product.price * item.quantity;
+      this.$http.get(url)
+        .then((res) => {
+          this.carts = res.data.data;
+          this.cartTotal = 0;
+          this.carts.forEach((item) => {
+            this.cartTotal += item.product.price * item.quantity;
+          });
+          this.isLoading = false;
+        }).catch(() => {
+          this.$toast.error('無法取得資料，請重新整理');
+          this.isLoading = false;
         });
-        this.isLoading = false;
-      });
     },
     addCouponCode() {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/coupon/search`;
@@ -310,15 +305,23 @@ export default {
           this.discount = this.cartTotal - sum;
           this.$bus.$emit('sendCoupon', this.coupon_code);
           this.isProcessing = false;
+        }).catch(() => {
+          this.$toast.error('請確認優惠折扣碼');
+          this.isProcessing = false;
         });
     },
     createOrder() {
+      this.isLoading = false;
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/orders`;
       this.$http.post(url, this.order_detail)
         .then((response) => {
           if (response.data.data.id) {
             this.$router.push(`/checkout_payment/${response.data.data.id}`);
           }
+          this.isLoading = false;
+        }).catch(() => {
+          this.$toast.error('訂單失敗，請稍後再試');
+          this.isLoading = false;
         });
     },
   },
