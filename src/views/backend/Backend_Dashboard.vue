@@ -2,8 +2,7 @@
 <div>
   <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 passeroOne" href="#">a little</a>
-    <button
-      class="navbar-toggler position-absolute d-md-none collapsed"
+    <button class="navbar-toggler position-absolute d-md-none collapsed"
       type="button" data-toggle="collapse"
       data-target="#sidebarMenu"
       aria-controls="sidebarMenu"
@@ -23,35 +22,31 @@
         <div class="sidebar-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <router-link
-              to="/admin/products"
-              class="nav-link">
-              <span data-feather="shopping-cart"></span>
-              產品頁面
+              <router-link  to="/admin/products"
+                class="nav-link">
+                <span data-feather="shopping-cart"></span>
+                產品頁面
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link
-              to="/admin/orders"
-              class="nav-link">
-              <span data-feather="file"></span>
-              訂單列表
+              <router-link  to="/admin/orders"
+                class="nav-link">
+                <span data-feather="file"></span>
+                訂單列表
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link
-              to="/admin/coupons"
-              class="nav-link">
-              <span data-feather="dollar-sign"></span>
-              優惠券
+              <router-link  to="/admin/coupons"
+                class="nav-link">
+                <span data-feather="dollar-sign"></span>
+                優惠券
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link
-              to="/admin/storages"
-              class="nav-link">
-              <span data-feather="folder-plus"></span>
-              圖片儲存
+              <router-link  to="/admin/storages"
+                class="nav-link">
+                <span data-feather="folder-plus"></span>
+                圖片儲存
               </router-link>
             </li>
           </ul>
