@@ -31,11 +31,11 @@ export default {
     return {
     };
   },
-  props: { // 由外傳內的資訊
+  props: {
     pages: {},
   },
   methods: {
-    clickPage(i) { // 點擊頁碼產生的號碼
+    clickPage(i) {
       this.$emit('update', i);
     },
   },

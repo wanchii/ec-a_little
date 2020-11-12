@@ -1,14 +1,12 @@
 <template>
-<!-- nav 導覽列 -->
-<section class="container">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <router-link class="navbar-brand passeroOne text-primary font-weight-bold"
-          to="/">
-          a little
-        </router-link>
-      </nav>
-</section>
-
+  <section class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <router-link class="navbar-brand passeroOne text-primary font-weight-bold"
+        to="/">
+        a little
+      </router-link>
+    </nav>
+  </section>
 </template>
 
 <script>

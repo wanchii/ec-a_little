@@ -3,10 +3,10 @@
     <div class="container">
       <ul class="d-flex list-unstyled mb-0 flex-md-row flex-column justify-content-md-between">
         <li class="d-flex flex-md-row flex-column">
-          <p  class="mr-2 mb-md-0 mb-2">
+          <p class="mr-2 mb-md-0 mb-2">
             © Copright 2020 Emily Chen
           </p>
-          <p  class="mr-2 mb-md-0 mb-2">
+          <p class="mr-2 mb-md-0 mb-2">
             網站素材都取自網路，僅為練習之用
           </p>
         </li>
@@ -19,15 +19,18 @@
             to="/login">
             <span class="icon-gears"></span>
           </router-link>
-            </li>
-          </ul>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-
+  data() {
+    return {
+    };
+  },
 };
 </script>
 
