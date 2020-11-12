@@ -211,7 +211,6 @@
                       <label for="paymentSelect" class="font-weight-bold">購買方式</label>
                       <select class="form-control" id="paymentSelect"
                         v-model="order_detail.payment" :class="classes" name="付款方式">
-                      <!-- <option >請選擇付款方式</option> -->
                         <option value selected disabled hidden >請選擇付款方式</option>
                         <option value="WebATM">WebATM</option>
                         <option value="ATM">ATM</option>
